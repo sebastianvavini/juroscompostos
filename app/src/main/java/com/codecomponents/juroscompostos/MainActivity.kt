@@ -92,27 +92,32 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         var periodo = binding.editTextPeriodo.text.toString().toDouble()
 
          var MONTANTE=valorInicial
-
          var contagem=0
-        while (contagem<=periodo){
+
+            while (contagem<=periodo){
 
 
 
             if(contagem==0){
-                MONTANTE=(valorInicial*taxaDeJuros)+valorInicial
+               // MONTANTE=(valorInicial*taxaDeJuros)+valorInicial
+                MONTANTE=valorInicial
+                println("Contagem ${contagem}")
             }
-            else  if(contagem<periodo) {
+            else  if(contagem<=periodo) {
                // MONTANTE += (MONTANTE * taxaDeJuros) + aporteMensal
                 MONTANTE = (MONTANTE*taxaDeJuros)+MONTANTE+aporteMensal
+                println("Passou do zero ${contagem}")
             }
-            contagem +=contagem
-                println("Contagem: ${contagem} Montante: ${MONTANTE}" )
+
+            contagem = ++contagem
+
+            println("Contagem: ${contagem} Montante: ${MONTANTE}" )
 
 
 
 
 
-        }
+         }
 
 
         binding.textViewTotal.text = "R$ ${"%.2f".format(MONTANTE)}"
