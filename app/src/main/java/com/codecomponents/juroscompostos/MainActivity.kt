@@ -75,7 +75,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.textViewTotal.text = "R$ ${"%.2f".format(MONTANTE)}"
 
+        /**
+         * adicionar um laço de repetição para ver a evolução mes após mes
+         * 
+         * for(int i = 1; i <= meses; i++){
+            double montante = principal * Math.pow((1 + taxa), i);...
 
+        **/
     }
      private fun calculateJurosComAportes(){
         /** var valorInicial =binding.editTextValorInicial.text.toString().toFloat()
