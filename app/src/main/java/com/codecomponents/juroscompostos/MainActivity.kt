@@ -73,11 +73,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
        // var  MONTANTE=Math.pow(base,expoente)
 
 
-        binding.textViewTotal.text = "R$ ${"%.2f".format(MONTANTE)}"
+        binding.textViewTotal.text = "$ ${"%.2f".format(MONTANTE)}"
 
         /**
          * adicionar um laço de repetição para ver a evolução mes após mes
-         * 
+         *
          * for(int i = 1; i <= meses; i++){
             double montante = principal * Math.pow((1 + taxa), i);...
 
