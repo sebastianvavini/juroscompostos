@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //supportActionBar?.hide()
+        supportActionBar?.hide()
 
         binding.buttonCalculate.setOnClickListener(this)
     }
@@ -98,6 +98,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         var periodo = binding.editTextPeriodo.text.toString().toDouble()
 
          var MONTANTE=valorInicial
+         var totalInvestido=valorInicial
+
          var contagem=0
 
             while (contagem<=periodo){
@@ -107,11 +109,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             if(contagem==0){
                // MONTANTE=(valorInicial*taxaDeJuros)+valorInicial
                 MONTANTE=valorInicial
+                totalInvestido=valorInicial
                 println("Contagem ${contagem}")
             }
             else  if(contagem<=periodo) {
                // MONTANTE += (MONTANTE * taxaDeJuros) + aporteMensal
                 MONTANTE = (MONTANTE*taxaDeJuros)+MONTANTE+aporteMensal
+                totalInvestido=totalInvestido+aporteMensal
                 println("Passou do zero ${contagem}")
             }
 
@@ -125,8 +129,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
          }
 
+         var totalGanhoEmJuros=MONTANTE-totalInvestido
 
-        binding.textViewTotal.text = "R$ ${"%.2f".format(MONTANTE)}"
+        binding.textViewTotal.text = "$ ${"%.2f".format(MONTANTE)}"
+        binding.textViewTotalInvestido.text= "$ ${"%.2f".format(totalInvestido)}"
+
+         binding.textViewTotalGanhoEmJuros.text= "$ ${"%.2f".format(totalGanhoEmJuros)}"
 
 
     }

@@ -164,7 +164,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Investido"/>
+            android:text="$"/>
 
         <TextView
             android:layout_marginTop="20dp"
@@ -181,7 +181,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Ganho em Juros"/>
+            android:text="$"/>
 
 
 
