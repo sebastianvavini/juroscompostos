@@ -49,7 +49,7 @@
         <EditText
             android:id="@+id/editText_ValorMensal"
             android:padding="16dp"
-            android:hint="Valor Mensal"
+            android:hint="Aporte Periódico Regular"
             android:inputType="numberDecimal"
             android:gravity="center"
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                 android:textAlignment="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Valor Mensal"/>
+                android:text="Aporte Periodico"/>
 
 
 
@@ -111,7 +111,7 @@
                 android:textAlignment="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Periodo"
+                android:text="Periodo ( a (taxa) deve corresponder ao (periodo))"
                 android:layout_weight="1"/>
 
 
